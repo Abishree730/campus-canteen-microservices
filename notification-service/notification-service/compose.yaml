@@ -1,0 +1,11 @@
+services:
+  rabbitmq:
+    image: rabbitmq:4.3-management
+    container_name: canteen-rabbitmq
+    restart: unless-stopped
+    environment:
+      RABBITMQ_DEFAULT_USER: canteen_rabbit_user
+      RABBITMQ_DEFAULT_PASS: canteen_rabbit_password
+    ports:
+      - "5672:5672"
+      - "15672:15672"

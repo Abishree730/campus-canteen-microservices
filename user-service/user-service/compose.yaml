@@ -1,0 +1,36 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: user-service-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: user_db
+      MYSQL_USER: user_service_user
+      MYSQL_PASSWORD: user_service_password
+    ports:
+      - "3308:3306"
+    volumes:
+      - user_mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "user_service_user", "-puser_service_password"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  user-service:
+    build:
+      context: .
+    container_name: user-service-app
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/user_db
+      DB_USERNAME: user_service_user
+      DB_PASSWORD: user_service_password
+    ports:
+      - "8081:8081"
+
+volumes:
+  user_mysql_data:

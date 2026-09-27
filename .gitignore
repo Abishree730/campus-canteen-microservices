@@ -1,0 +1,31 @@
+# Java / Maven
+**/target/
+**/.classpath
+**/.project
+**/.settings/
+
+# IntelliJ IDEA
+**/.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Node.js
+**/node_modules/
+**/dist/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# Java compiled files
+*.class
+
+# OS files
+.DS_Store
+Thumbs.db

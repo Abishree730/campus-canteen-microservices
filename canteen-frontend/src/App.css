@@ -1,0 +1,756 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* Navbar */
+
+.navbar {
+  height: 70px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links button {
+  border: none;
+  background: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* Menu */
+
+.menu-page {
+  padding: 50px;
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.menu-header h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.menu-header p {
+  color: #666;
+  font-size: 18px;
+}
+
+/* Food cards */
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+  justify-content: center;
+  gap: 30px;
+}
+
+.food-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.food-icon {
+  font-size: 55px;
+  margin-bottom: 10px;
+}
+
+.food-card h2 {
+  margin: 10px 0;
+}
+
+.description {
+  color: #666;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 15px 0 8px;
+}
+
+.available {
+  color: green;
+  font-weight: bold;
+}
+
+.unavailable {
+  color: red;
+  font-weight: bold;
+}
+
+.order-button {
+  margin-top: 15px;
+  padding: 11px 25px;
+  border: none;
+  border-radius: 8px;
+  background: #222;
+  color: white;
+  cursor: pointer;
+}
+
+.order-button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.message {
+  text-align: center;
+  font-size: 18px;
+}
+
+.error-message {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+}
+
+.quantity-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin: 20px 0 10px;
+}
+
+.quantity-control button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  background: #222;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.quantity-control span {
+  font-size: 20px;
+  font-weight: bold;
+  min-width: 25px;
+}
+
+.order-message {
+  width: fit-content;
+  max-width: 90%;
+  margin: 0 auto 30px;
+  padding: 15px 25px;
+  border-radius: 10px;
+  background: #e8f5e9;
+  color: #176b2c;
+  font-weight: bold;
+  text-align: center;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f7f7f7;
+}
+
+.login-card {
+  width: 400px;
+  background: white;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.login-icon {
+  text-align: center;
+  font-size: 50px;
+}
+
+.login-card h1 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.login-card p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-card label {
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.login-card input {
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.login-button {
+  padding: 13px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #222;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-error {
+  color: #c62828;
+  background: #ffebee;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.welcome-user {
+  margin-left: auto;
+  margin-right: 25px;
+  font-weight: bold;
+}
+.secondary-button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 11px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+  color: #222;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.secondary-button:hover {
+  background: #f5f5f5;
+}
+
+.register-success {
+  color: #176b2c;
+  background: #e8f5e9;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.orders-page {
+  padding: 50px;
+}
+
+.orders-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.order-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-card h2 {
+  margin-top: 0;
+}
+
+.order-card p {
+  color: #666;
+}
+
+.order-status {
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 20px;
+  background: #e8f5e9;
+  color: #176b2c;
+  font-weight: bold;
+}
+.orders-actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.refresh-orders-button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #222;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.refresh-orders-button:hover {
+  opacity: 0.85;
+}
+
+.order-details {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.order-food-icon {
+  font-size: 45px;
+  min-width: 60px;
+  text-align: center;
+}
+
+.order-description {
+  margin-top: -5px;
+  margin-bottom: 15px;
+}
+
+.order-status-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-status {
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 20px;
+  background: #e8f5e9;
+  color: #176b2c;
+  font-weight: bold;
+  white-space: nowrap;
+}
+/* ==============================
+   NOTIFICATIONS
+============================== */
+
+.notifications-page {
+  padding: 50px;
+}
+
+.notifications-actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.notifications-list {
+  max-width: 900px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.notification-card {
+  background: white;
+
+  padding: 20px 25px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.notification-icon {
+  font-size: 35px;
+}
+
+.notification-content h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.notification-content p {
+  margin: 0;
+  color: #666;
+}
+/* ==============================
+   NOTIFICATION BADGE
+============================== */
+
+.notification-nav-button {
+  position: relative;
+}
+
+.notification-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 20px;
+  height: 20px;
+
+  margin-left: 6px;
+
+  padding: 2px 5px;
+
+  border-radius: 50%;
+
+  background: #d32f2f;
+  color: white;
+
+  font-size: 11px;
+  font-weight: bold;
+}
+/* =========================================
+   ADMIN MENU MANAGEMENT
+   ========================================= */
+
+.admin-section {
+  margin-top: 30px;
+  padding: 25px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.admin-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.admin-section-header h2 {
+  margin: 0 0 6px 0;
+}
+
+.admin-section-header p {
+  margin: 0;
+  color: #666;
+}
+
+.add-food-button {
+  border: none;
+  border-radius: 8px;
+  padding: 11px 18px;
+  background: #2e7d32;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-food-button:hover {
+  opacity: 0.9;
+}
+
+.admin-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  );
+  gap: 20px;
+}
+
+.admin-menu-card {
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background: #fafafa;
+}
+
+.admin-menu-icon {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.admin-menu-details h2 {
+  margin: 0 0 8px 0;
+}
+
+.admin-menu-details .description {
+  color: #666;
+  min-height: 42px;
+}
+
+.admin-menu-details .price {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.admin-menu-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.admin-menu-actions button {
+  border: none;
+  border-radius: 7px;
+  padding: 9px 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.edit-food-button {
+  background: #1976d2;
+  color: white;
+}
+
+.availability-button {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.delete-food-button {
+  background: #d32f2f;
+  color: white;
+}
+
+.admin-menu-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   MENU FORM
+   ========================================= */
+
+.menu-form-section {
+  margin-top: 30px;
+}
+
+.menu-form {
+  max-width: 700px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  margin-bottom: 7px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 11px 12px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  font-size: 15px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #1976d2;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.save-food-button {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 22px;
+  background: #1976d2;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.save-food-button:hover {
+  opacity: 0.9;
+}
+
+.save-food-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   ADMIN PAGE
+   ========================================= */
+
+.admin-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.admin-header h1 {
+  margin-bottom: 5px;
+}
+
+.admin-header p {
+  margin-top: 0;
+  color: #666;
+}
+
+.admin-bottom-actions {
+  margin-top: 30px;
+  padding-bottom: 30px;
+}
+
+/* =========================================
+   RESPONSIVE ADMIN MENU
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  .admin-page {
+    padding: 15px;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+/* =========================================
+   CUSTOMER ORDER STATUS TRACKER
+   ========================================= */
+
+.order-status-section {
+  min-width: 280px;
+}
+
+.order-progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 20px;
+  gap: 8px;
+}
+
+.progress-step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  color: #aaa;
+}
+
+.progress-step span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto 6px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  color: #777;
+  font-weight: bold;
+}
+
+.progress-step small {
+  display: block;
+  font-size: 11px;
+}
+
+.progress-step.active {
+  color: #1976d2;
+  font-weight: 600;
+}
+
+.progress-step.active span {
+  background: #1976d2;
+  color: white;
+}
+
+.cancelled-order {
+  margin-top: 15px;
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+
+  .order-status-section {
+    min-width: auto;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .order-progress {
+    gap: 3px;
+  }
+
+  .progress-step small {
+    font-size: 9px;
+  }
+
+}

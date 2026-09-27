@@ -1,0 +1,36 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: menu-service-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: menu_db
+      MYSQL_USER: menu_user
+      MYSQL_PASSWORD: menu_password
+    ports:
+      - "3307:3306"
+    volumes:
+      - menu_mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "menu_user", "-pmenu_password"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  menu-service:
+    build:
+      context: .
+    container_name: menu-service-app
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/menu_db
+      DB_USERNAME: menu_user
+      DB_PASSWORD: menu_password
+    ports:
+      - "8082:8082"
+
+volumes:
+  menu_mysql_data:
